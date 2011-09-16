@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Raven App Manager' target in the 'Raven App Manager' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

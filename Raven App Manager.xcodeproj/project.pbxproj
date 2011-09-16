@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FC848CE1423F374008AA377 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC848CD1423F374008AA377 /* Cocoa.framework */; };
+		9FC848D81423F374008AA377 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848D61423F374008AA377 /* InfoPlist.strings */; };
+		9FC848DA1423F374008AA377 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC848D91423F374008AA377 /* main.m */; };
+		9FC848DE1423F374008AA377 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848DC1423F374008AA377 /* Credits.rtf */; };
+		9FC848E11423F374008AA377 /* Raven_App_ManagerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC848E01423F374008AA377 /* Raven_App_ManagerAppDelegate.m */; };
+		9FC848E41423F374008AA377 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848E21423F374008AA377 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9FC848C91423F374008AA377 /* Raven App Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raven App Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FC848CD1423F374008AA377 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9FC848D01423F374008AA377 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9FC848D11423F374008AA377 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9FC848D21423F374008AA377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9FC848D51423F374008AA377 /* Raven App Manager-Info.plist */ = {isa = PBXFileReference; path = "Raven App Manager-Info.plist"; sourceTree = "<group>"; };
+		9FC848D71423F374008AA377 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9FC848D91423F374008AA377 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FC848DB1423F374008AA377 /* Raven App Manager-Prefix.pch */ = {isa = PBXFileReference; path = "Raven App Manager-Prefix.pch"; sourceTree = "<group>"; };
+		9FC848DD1423F374008AA377 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9FC848DF1423F374008AA377 /* Raven_App_ManagerAppDelegate.h */ = {isa = PBXFileReference; path = Raven_App_ManagerAppDelegate.h; sourceTree = "<group>"; };
+		9FC848E01423F374008AA377 /* Raven_App_ManagerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Raven_App_ManagerAppDelegate.m; sourceTree = "<group>"; };
+		9FC848E31423F374008AA377 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FC848C61423F374008AA377 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC848CE1423F374008AA377 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FC848BE1423F373008AA377 = {
+			isa = PBXGroup;
+			children = (
+				9FC848D31423F374008AA377 /* Raven App Manager */,
+				9FC848CC1423F374008AA377 /* Frameworks */,
+				9FC848CA1423F374008AA377 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FC848CA1423F374008AA377 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FC848C91423F374008AA377 /* Raven App Manager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FC848CC1423F374008AA377 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FC848CD1423F374008AA377 /* Cocoa.framework */,
+				9FC848CF1423F374008AA377 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FC848CF1423F374008AA377 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FC848D01423F374008AA377 /* AppKit.framework */,
+				9FC848D11423F374008AA377 /* CoreData.framework */,
+				9FC848D21423F374008AA377 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9FC848D31423F374008AA377 /* Raven App Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9FC848DF1423F374008AA377 /* Raven_App_ManagerAppDelegate.h */,
+				9FC848E01423F374008AA377 /* Raven_App_ManagerAppDelegate.m */,
+				9FC848E21423F374008AA377 /* MainMenu.xib */,
+				9FC848D41423F374008AA377 /* Supporting Files */,
+			);
+			path = "Raven App Manager";
+			sourceTree = "<group>";
+		};
+		9FC848D41423F374008AA377 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FC848D51423F374008AA377 /* Raven App Manager-Info.plist */,
+				9FC848D61423F374008AA377 /* InfoPlist.strings */,
+				9FC848D91423F374008AA377 /* main.m */,
+				9FC848DB1423F374008AA377 /* Raven App Manager-Prefix.pch */,
+				9FC848DC1423F374008AA377 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FC848C81423F374008AA377 /* Raven App Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FC848E71423F374008AA377 /* Build configuration list for PBXNativeTarget "Raven App Manager" */;
+			buildPhases = (
+				9FC848C51423F374008AA377 /* Sources */,
+				9FC848C61423F374008AA377 /* Frameworks */,
+				9FC848C71423F374008AA377 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Raven App Manager";
+			productName = "Raven App Manager";
+			productReference = 9FC848C91423F374008AA377 /* Raven App Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FC848C01423F373008AA377 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9FC848C31423F373008AA377 /* Build configuration list for PBXProject "Raven App Manager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9FC848BE1423F373008AA377;
+			productRefGroup = 9FC848CA1423F374008AA377 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FC848C81423F374008AA377 /* Raven App Manager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FC848C71423F374008AA377 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC848D81423F374008AA377 /* InfoPlist.strings in Resources */,
+				9FC848DE1423F374008AA377 /* Credits.rtf in Resources */,
+				9FC848E41423F374008AA377 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FC848C51423F374008AA377 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC848DA1423F374008AA377 /* main.m in Sources */,
+				9FC848E11423F374008AA377 /* Raven_App_ManagerAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9FC848D61423F374008AA377 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FC848D71423F374008AA377 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9FC848DC1423F374008AA377 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FC848DD1423F374008AA377 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9FC848E21423F374008AA377 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FC848E31423F374008AA377 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FC848E51423F374008AA377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9FC848E61423F374008AA377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9FC848E81423F374008AA377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
+				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9FC848E91423F374008AA377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
+				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FC848C31423F373008AA377 /* Build configuration list for PBXProject "Raven App Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FC848E51423F374008AA377 /* Debug */,
+				9FC848E61423F374008AA377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FC848E71423F374008AA377 /* Build configuration list for PBXNativeTarget "Raven App Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FC848E81423F374008AA377 /* Debug */,
+				9FC848E91423F374008AA377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FC848C01423F373008AA377 /* Project object */;
+}
