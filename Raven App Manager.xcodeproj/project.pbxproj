@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2C28C514249E910063317C /* RAPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C28C414249E910063317C /* RAPlistManager.m */; };
+		9F3C5F541424C2D800C82F6E /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F4E1424C2D800C82F6E /* add.png */; };
+		9F3C5F551424C2D800C82F6E /* raven_app_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F4F1424C2D800C82F6E /* raven_app_big.png */; };
+		9F3C5F561424C2D800C82F6E /* raven-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F501424C2D800C82F6E /* raven-black.png */; };
+		9F3C5F571424C2D800C82F6E /* Raven.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F511424C2D800C82F6E /* Raven.icns */; };
+		9F3C5F581424C2D800C82F6E /* Raven.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F521424C2D800C82F6E /* Raven.ico */; };
+		9F3C5F591424C2D800C82F6E /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F531424C2D800C82F6E /* trash.png */; };
+		9F3C5F5B1424C30900C82F6E /* raven_app_big.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */; };
+		9F3C5F5D1424C35B00C82F6E /* Raven.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F5C1424C35B00C82F6E /* Raven.ico */; };
+		9F69AB6D142728F2003AE44B /* Raven.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB6C142728F2003AE44B /* Raven.icns */; };
+		9F69AB7D1427341E003AE44B /* Builder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB7C1427341E003AE44B /* Builder.icns */; };
+		9F69AB8214273919003AE44B /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB7F14273919003AE44B /* delete.png */; };
+		9F69AB8314273919003AE44B /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8014273919003AE44B /* new.png */; };
+		9F69AB8414273919003AE44B /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8114273919003AE44B /* save.png */; };
+		9F69AB8614273921003AE44B /* rSDK-IconTemplate.psd in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */; };
 		9FC848CE1423F374008AA377 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC848CD1423F374008AA377 /* Cocoa.framework */; };
 		9FC848D81423F374008AA377 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848D61423F374008AA377 /* InfoPlist.strings */; };
 		9FC848DA1423F374008AA377 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC848D91423F374008AA377 /* main.m */; };
@@ -16,17 +31,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2C28C314249E910063317C /* RAPlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAPlistManager.h; sourceTree = "<group>"; };
+		9F2C28C414249E910063317C /* RAPlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAPlistManager.m; sourceTree = "<group>"; };
+		9F3C5F4E1424C2D800C82F6E /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		9F3C5F4F1424C2D800C82F6E /* raven_app_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raven_app_big.png; sourceTree = "<group>"; };
+		9F3C5F501424C2D800C82F6E /* raven-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raven-black.png"; sourceTree = "<group>"; };
+		9F3C5F511424C2D800C82F6E /* Raven.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Raven.icns; sourceTree = "<group>"; };
+		9F3C5F521424C2D800C82F6E /* Raven.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Raven.ico; sourceTree = "<group>"; };
+		9F3C5F531424C2D800C82F6E /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
+		9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = raven_app_big.ico; sourceTree = "<group>"; };
+		9F3C5F5C1424C35B00C82F6E /* Raven.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Raven.ico; sourceTree = "<group>"; };
+		9F69AB6C142728F2003AE44B /* Raven.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Raven.icns; sourceTree = "<group>"; };
+		9F69AB7C1427341E003AE44B /* Builder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Builder.icns; sourceTree = "<group>"; };
+		9F69AB7F14273919003AE44B /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		9F69AB8014273919003AE44B /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
+		9F69AB8114273919003AE44B /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rSDK-IconTemplate.psd"; sourceTree = "<group>"; };
 		9FC848C91423F374008AA377 /* Raven App Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raven App Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC848CD1423F374008AA377 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9FC848D01423F374008AA377 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9FC848D11423F374008AA377 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9FC848D21423F374008AA377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9FC848D51423F374008AA377 /* Raven App Manager-Info.plist */ = {isa = PBXFileReference; path = "Raven App Manager-Info.plist"; sourceTree = "<group>"; };
+		9FC848D51423F374008AA377 /* Raven App Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Raven App Manager-Info.plist"; sourceTree = "<group>"; };
 		9FC848D71423F374008AA377 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9FC848D91423F374008AA377 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9FC848DB1423F374008AA377 /* Raven App Manager-Prefix.pch */ = {isa = PBXFileReference; path = "Raven App Manager-Prefix.pch"; sourceTree = "<group>"; };
+		9FC848DB1423F374008AA377 /* Raven App Manager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Raven App Manager-Prefix.pch"; sourceTree = "<group>"; };
 		9FC848DD1423F374008AA377 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		9FC848DF1423F374008AA377 /* Raven_App_ManagerAppDelegate.h */ = {isa = PBXFileReference; path = Raven_App_ManagerAppDelegate.h; sourceTree = "<group>"; };
+		9FC848DF1423F374008AA377 /* Raven_App_ManagerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Raven_App_ManagerAppDelegate.h; sourceTree = "<group>"; };
 		9FC848E01423F374008AA377 /* Raven_App_ManagerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Raven_App_ManagerAppDelegate.m; sourceTree = "<group>"; };
 		9FC848E31423F374008AA377 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +77,14 @@
 		9FC848BE1423F373008AA377 = {
 			isa = PBXGroup;
 			children = (
+				9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */,
+				9F69AB7F14273919003AE44B /* delete.png */,
+				9F69AB8014273919003AE44B /* new.png */,
+				9F69AB8114273919003AE44B /* save.png */,
+				9F69AB7C1427341E003AE44B /* Builder.icns */,
+				9F69AB6C142728F2003AE44B /* Raven.icns */,
+				9F3C5F5C1424C35B00C82F6E /* Raven.ico */,
+				9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */,
 				9FC848D31423F374008AA377 /* Raven App Manager */,
 				9FC848CC1423F374008AA377 /* Frameworks */,
 				9FC848CA1423F374008AA377 /* Products */,
@@ -82,10 +121,18 @@
 		9FC848D31423F374008AA377 /* Raven App Manager */ = {
 			isa = PBXGroup;
 			children = (
+				9F3C5F4E1424C2D800C82F6E /* add.png */,
+				9F3C5F4F1424C2D800C82F6E /* raven_app_big.png */,
+				9F3C5F501424C2D800C82F6E /* raven-black.png */,
+				9F3C5F511424C2D800C82F6E /* Raven.icns */,
+				9F3C5F521424C2D800C82F6E /* Raven.ico */,
+				9F3C5F531424C2D800C82F6E /* trash.png */,
 				9FC848DF1423F374008AA377 /* Raven_App_ManagerAppDelegate.h */,
 				9FC848E01423F374008AA377 /* Raven_App_ManagerAppDelegate.m */,
 				9FC848E21423F374008AA377 /* MainMenu.xib */,
 				9FC848D41423F374008AA377 /* Supporting Files */,
+				9F2C28C314249E910063317C /* RAPlistManager.h */,
+				9F2C28C414249E910063317C /* RAPlistManager.m */,
 			);
 			path = "Raven App Manager";
 			sourceTree = "<group>";
@@ -127,6 +174,9 @@
 /* Begin PBXProject section */
 		9FC848C01423F373008AA377 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 9FC848C31423F373008AA377 /* Build configuration list for PBXProject "Raven App Manager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -152,6 +202,20 @@
 				9FC848D81423F374008AA377 /* InfoPlist.strings in Resources */,
 				9FC848DE1423F374008AA377 /* Credits.rtf in Resources */,
 				9FC848E41423F374008AA377 /* MainMenu.xib in Resources */,
+				9F3C5F541424C2D800C82F6E /* add.png in Resources */,
+				9F3C5F551424C2D800C82F6E /* raven_app_big.png in Resources */,
+				9F3C5F561424C2D800C82F6E /* raven-black.png in Resources */,
+				9F3C5F571424C2D800C82F6E /* Raven.icns in Resources */,
+				9F3C5F581424C2D800C82F6E /* Raven.ico in Resources */,
+				9F3C5F591424C2D800C82F6E /* trash.png in Resources */,
+				9F3C5F5B1424C30900C82F6E /* raven_app_big.ico in Resources */,
+				9F3C5F5D1424C35B00C82F6E /* Raven.ico in Resources */,
+				9F69AB6D142728F2003AE44B /* Raven.icns in Resources */,
+				9F69AB7D1427341E003AE44B /* Builder.icns in Resources */,
+				9F69AB8214273919003AE44B /* delete.png in Resources */,
+				9F69AB8314273919003AE44B /* new.png in Resources */,
+				9F69AB8414273919003AE44B /* save.png in Resources */,
+				9F69AB8614273921003AE44B /* rSDK-IconTemplate.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +228,7 @@
 			files = (
 				9FC848DA1423F374008AA377 /* main.m in Sources */,
 				9FC848E11423F374008AA377 /* Raven_App_ManagerAppDelegate.m in Sources */,
+				9F2C28C514249E910063317C /* RAPlistManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +282,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -237,7 +302,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -248,6 +313,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
 				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -259,6 +325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
 				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -283,6 +350,7 @@
 				9FC848E91423F374008AA377 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
