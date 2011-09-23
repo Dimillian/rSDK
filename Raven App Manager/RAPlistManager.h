@@ -19,6 +19,7 @@
                           URL4:(NSString *)URL4 
                        atIndex:(NSInteger)index;
 
--(void)deleteAppAtIndex:(NSInteger)index; 
+-(void)deleteAppAtIndex:(NSInteger)index;
+-(void)swapObjectAtIndex:(NSInteger)index upOrDown:(NSInteger)order;
 
 @end

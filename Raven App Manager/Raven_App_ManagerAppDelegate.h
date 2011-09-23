@@ -37,6 +37,9 @@
     IBOutlet NSTextField *bigIconSecondText; 
     IBOutlet NSTextField *smallIconSecondText;
     
+    IBOutlet NSTableColumn *imageColumn; 
+    IBOutlet NSTableColumn *textColumn;
+    
     
 }
 
@@ -46,5 +49,7 @@
 -(IBAction)saveApp:(id)sender;
 -(IBAction)deleteAnApp:(id)sender;
 -(IBAction)openTemplate:(id)sender;
+-(IBAction)moveItemUp:(id)sender;
+-(IBAction)moveItemDown:(id)sender;
 
 @end

@@ -24,7 +24,7 @@
     // Create a FileManager object, we will use this to check the status
 	// of the database and to copy it over if required
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *applicationSupport = [[NSString stringWithString:@"~/Library/Application Support/RavenApp"] stringByExpandingTildeInPath];
+    NSString *applicationSupport = [[NSString stringWithString:@"~/Library/Application Support/RavenApp/appManager"] stringByExpandingTildeInPath];
     //Check if exist, if not create the dir
     if ([fileManager fileExistsAtPath:applicationSupport] == NO)
         [fileManager createDirectoryAtPath:applicationSupport withIntermediateDirectories:YES attributes:nil error:nil];
@@ -47,43 +47,50 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    NSString *path = [@"~/Library/Application Support/RavenApp/app/app.plist" stringByExpandingTildeInPath];
+    NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-    NSArray *folders = [[dict objectForKey:@"app"] mutableCopy];
+    NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
     NSUInteger count = [folders count];
     [folders release]; 
     return count;
 
 }
- 
- 
+
  
 - (id)tableView:(NSTableView *)tableView
  objectValueForTableColumn:(NSTableColumn *)tableColumn
  row:(NSInteger)row
  {  
  
-     NSString *path = [@"~/Library/Application Support/RavenApp/app/app.plist" stringByExpandingTildeInPath];
+     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
      NSDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-     NSArray *folders = [[dict objectForKey:@"app"] mutableCopy];
+     NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
     NSDictionary *item = [folders objectAtIndex:row];
-    NSString *appName = [item objectForKey:@"appname"];
+    NSString *appName = [item objectForKey:PLIST_KEY_APPNAME];
+     NSString *folderNameTemp = [item objectForKey:PLIST_KEY_FOLDER];
+     NSString *imagePath = [NSString stringWithFormat:application_support_path@"%@/main.png", folderNameTemp];
+     NSImage *tempImage = [[[NSImage alloc]initWithContentsOfFile:[imagePath stringByExpandingTildeInPath]]autorelease];
      [folders release]; 
-    return appName;
+     if (tableColumn == imageColumn) {
+         return tempImage;
+     }
+     if (tableColumn == textColumn) {
+        return appName;
+     }
 
- 
+     return nil;
 }
  
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-    NSString *path = [@"~/Library/Application Support/RavenApp/app/app.plist" stringByExpandingTildeInPath];
+    NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-    NSArray *folders = [[dict objectForKey:@"app"] mutableCopy];
+    NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
     NSDictionary *item = [folders objectAtIndex:[tableview selectedRow]];
-    NSString *folderName = [item objectForKey:@"foldername"];
-    [folderNameField setStringValue:[item objectForKey:@"foldername"]];
-    [appNameField setStringValue:[item objectForKey:@"appname"]];
-    NSArray *URL = [[item objectForKey:@"URL"]mutableCopy]; 
+    NSString *folderName = [item objectForKey:PLIST_KEY_FOLDER];
+    [folderNameField setStringValue:[item objectForKey:PLIST_KEY_FOLDER]];
+    [appNameField setStringValue:[item objectForKey:PLIST_KEY_APPNAME]];
+    NSArray *URL = [[item objectForKey:PLIST_KEY_URL]mutableCopy]; 
     [firstUrl setStringValue:[URL objectAtIndex:0]];
     [secondUrl setStringValue:[URL objectAtIndex:1]];
     [thirdUrl setStringValue:[URL objectAtIndex:2]];
@@ -147,21 +154,21 @@
 -(void)saveApp:(id)sender
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *applicationSupport = [[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@", [folderNameField stringValue]] stringByExpandingTildeInPath];
+    NSString *applicationSupport = [[NSString stringWithFormat:application_support_path@"%@", [folderNameField stringValue]] stringByExpandingTildeInPath];
     //Check if exist, if not create the dir
     if ([fileManager fileExistsAtPath:applicationSupport] == NO)
         [fileManager createDirectoryAtPath:applicationSupport withIntermediateDirectories:YES attributes:nil error:nil];
 
-    [[[firstImageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/1_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[firstImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/1_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[secondImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/2_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[secondImageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/2_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[thirdImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/3_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[thirdImageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/3_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[fourImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/4_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[fourimageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/4_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[smallIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/main.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
-    [[[bigIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:@"~/Library/Application Support/RavenApp/app/%@/main_big.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[firstImageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/1_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[firstImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/1_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[secondImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/2_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[secondImageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/2_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[thirdImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/3_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[thirdImageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/3_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[fourImageOff image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/4_off.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[fourimageOn image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/4_on.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[smallIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/main.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
+    [[[bigIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/main_big.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
     [listManager writeToPlistWithAppName:[appNameField stringValue] folderName:[folderNameField stringValue] withURL1:[firstUrl stringValue] URL2:[secondUrl stringValue] URL3:[thirdUrl stringValue] URL4:[fourUrl stringValue] atIndex:[tableview selectedRow]];
     [listManager release]; 
@@ -182,6 +189,26 @@
     NSWorkspace *workspace = [NSWorkspace sharedWorkspace]; 
     [workspace selectFile:templatePath inFileViewerRootedAtPath:templatePath];
     
+}
+
+-(void)moveItemUp:(id)sender
+{
+    RAPlistManager *listManager = [[RAPlistManager alloc]init];
+    [listManager swapObjectAtIndex:[tableview selectedRow] upOrDown:0];
+    [tableview reloadData]; 
+    [listManager release];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:[tableview selectedRow]-1];
+    [tableview selectRowIndexes:indexSet byExtendingSelection:NO];
+}
+
+-(void)moveItemDown:(id)sender
+{
+    RAPlistManager *listManager = [[RAPlistManager alloc]init];
+    [listManager swapObjectAtIndex:[tableview selectedRow] upOrDown:1];
+    [tableview reloadData]; 
+    [listManager release];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:[tableview selectedRow]+1];
+    [tableview selectRowIndexes:indexSet byExtendingSelection:NO];
 }
 
 -(void)newWindow:(id)sender

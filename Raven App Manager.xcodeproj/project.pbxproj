@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2518311429C2E300809F2B /* rSDk in Resources */ = {isa = PBXBuildFile; fileRef = 9F25182E1429C2E300809F2B /* rSDk */; };
+		9F2518321429C2E300809F2B /* rSDk.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F25182F1429C2E300809F2B /* rSDk.icns */; };
+		9F2518331429C2E300809F2B /* rSDk.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F2518301429C2E300809F2B /* rSDk.ico */; };
+		9F2518361429C2EC00809F2B /* rSDk.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F2518351429C2EC00809F2B /* rSDk.icns */; };
 		9F2C28C514249E910063317C /* RAPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C28C414249E910063317C /* RAPlistManager.m */; };
 		9F3C5F541424C2D800C82F6E /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F4E1424C2D800C82F6E /* add.png */; };
 		9F3C5F551424C2D800C82F6E /* raven_app_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F4F1424C2D800C82F6E /* raven_app_big.png */; };
@@ -22,6 +26,8 @@
 		9F69AB8314273919003AE44B /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8014273919003AE44B /* new.png */; };
 		9F69AB8414273919003AE44B /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8114273919003AE44B /* save.png */; };
 		9F69AB8614273921003AE44B /* rSDK-IconTemplate.psd in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */; };
+		9F69ABB11427BF91003AE44B /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69ABAF1427BF91003AE44B /* down.png */; };
+		9F69ABB21427BF91003AE44B /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69ABB01427BF91003AE44B /* up.png */; };
 		9FC848CE1423F374008AA377 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC848CD1423F374008AA377 /* Cocoa.framework */; };
 		9FC848D81423F374008AA377 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848D61423F374008AA377 /* InfoPlist.strings */; };
 		9FC848DA1423F374008AA377 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC848D91423F374008AA377 /* main.m */; };
@@ -31,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F25182E1429C2E300809F2B /* rSDk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rSDk; sourceTree = "<group>"; };
+		9F25182F1429C2E300809F2B /* rSDk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rSDk.icns; sourceTree = "<group>"; };
+		9F2518301429C2E300809F2B /* rSDk.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = rSDk.ico; sourceTree = "<group>"; };
+		9F2518351429C2EC00809F2B /* rSDk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rSDk.icns; sourceTree = "<group>"; };
 		9F2C28C314249E910063317C /* RAPlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAPlistManager.h; sourceTree = "<group>"; };
 		9F2C28C414249E910063317C /* RAPlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAPlistManager.m; sourceTree = "<group>"; };
 		9F3C5F4E1424C2D800C82F6E /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -39,15 +49,17 @@
 		9F3C5F511424C2D800C82F6E /* Raven.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Raven.icns; sourceTree = "<group>"; };
 		9F3C5F521424C2D800C82F6E /* Raven.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Raven.ico; sourceTree = "<group>"; };
 		9F3C5F531424C2D800C82F6E /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
-		9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = raven_app_big.ico; sourceTree = "<group>"; };
-		9F3C5F5C1424C35B00C82F6E /* Raven.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Raven.ico; sourceTree = "<group>"; };
-		9F69AB6C142728F2003AE44B /* Raven.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Raven.icns; sourceTree = "<group>"; };
-		9F69AB7C1427341E003AE44B /* Builder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Builder.icns; sourceTree = "<group>"; };
-		9F69AB7F14273919003AE44B /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
-		9F69AB8014273919003AE44B /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
-		9F69AB8114273919003AE44B /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
-		9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rSDK-IconTemplate.psd"; sourceTree = "<group>"; };
-		9FC848C91423F374008AA377 /* Raven App Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raven App Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = raven_app_big.ico; path = ../raven_app_big.ico; sourceTree = "<group>"; };
+		9F3C5F5C1424C35B00C82F6E /* Raven.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = Raven.ico; path = ../Raven.ico; sourceTree = "<group>"; };
+		9F69AB6C142728F2003AE44B /* Raven.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Raven.icns; path = ../Raven.icns; sourceTree = "<group>"; };
+		9F69AB7C1427341E003AE44B /* Builder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Builder.icns; path = ../Builder.icns; sourceTree = "<group>"; };
+		9F69AB7F14273919003AE44B /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = ../delete.png; sourceTree = "<group>"; };
+		9F69AB8014273919003AE44B /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new.png; path = ../new.png; sourceTree = "<group>"; };
+		9F69AB8114273919003AE44B /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = save.png; path = ../save.png; sourceTree = "<group>"; };
+		9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rSDK-IconTemplate.psd"; path = "../rSDK-IconTemplate.psd"; sourceTree = "<group>"; };
+		9F69ABAF1427BF91003AE44B /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		9F69ABB01427BF91003AE44B /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		9FC848C91423F374008AA377 /* rSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC848CD1423F374008AA377 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9FC848D01423F374008AA377 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9FC848D11423F374008AA377 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -74,10 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9FC848BE1423F373008AA377 = {
+		9F69AB991427850B003AE44B /* ressources */ = {
 			isa = PBXGroup;
 			children = (
-				9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */,
+				9F25182E1429C2E300809F2B /* rSDk */,
+				9F25182F1429C2E300809F2B /* rSDk.icns */,
+				9F2518301429C2E300809F2B /* rSDk.ico */,
+				9F69ABAF1427BF91003AE44B /* down.png */,
+				9F69ABB01427BF91003AE44B /* up.png */,
 				9F69AB7F14273919003AE44B /* delete.png */,
 				9F69AB8014273919003AE44B /* new.png */,
 				9F69AB8114273919003AE44B /* save.png */,
@@ -85,6 +101,20 @@
 				9F69AB6C142728F2003AE44B /* Raven.icns */,
 				9F3C5F5C1424C35B00C82F6E /* Raven.ico */,
 				9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */,
+				9F3C5F4E1424C2D800C82F6E /* add.png */,
+				9F3C5F4F1424C2D800C82F6E /* raven_app_big.png */,
+				9F3C5F501424C2D800C82F6E /* raven-black.png */,
+				9F3C5F511424C2D800C82F6E /* Raven.icns */,
+				9F3C5F521424C2D800C82F6E /* Raven.ico */,
+				9F3C5F531424C2D800C82F6E /* trash.png */,
+			);
+			name = ressources;
+			sourceTree = "<group>";
+		};
+		9FC848BE1423F373008AA377 = {
+			isa = PBXGroup;
+			children = (
+				9F2518351429C2EC00809F2B /* rSDk.icns */,
 				9FC848D31423F374008AA377 /* Raven App Manager */,
 				9FC848CC1423F374008AA377 /* Frameworks */,
 				9FC848CA1423F374008AA377 /* Products */,
@@ -94,7 +124,7 @@
 		9FC848CA1423F374008AA377 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FC848C91423F374008AA377 /* Raven App Manager.app */,
+				9FC848C91423F374008AA377 /* rSDK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,18 +151,13 @@
 		9FC848D31423F374008AA377 /* Raven App Manager */ = {
 			isa = PBXGroup;
 			children = (
-				9F3C5F4E1424C2D800C82F6E /* add.png */,
-				9F3C5F4F1424C2D800C82F6E /* raven_app_big.png */,
-				9F3C5F501424C2D800C82F6E /* raven-black.png */,
-				9F3C5F511424C2D800C82F6E /* Raven.icns */,
-				9F3C5F521424C2D800C82F6E /* Raven.ico */,
-				9F3C5F531424C2D800C82F6E /* trash.png */,
+				9F69AB991427850B003AE44B /* ressources */,
+				9F2C28C314249E910063317C /* RAPlistManager.h */,
+				9F2C28C414249E910063317C /* RAPlistManager.m */,
 				9FC848DF1423F374008AA377 /* Raven_App_ManagerAppDelegate.h */,
 				9FC848E01423F374008AA377 /* Raven_App_ManagerAppDelegate.m */,
 				9FC848E21423F374008AA377 /* MainMenu.xib */,
 				9FC848D41423F374008AA377 /* Supporting Files */,
-				9F2C28C314249E910063317C /* RAPlistManager.h */,
-				9F2C28C414249E910063317C /* RAPlistManager.m */,
 			);
 			path = "Raven App Manager";
 			sourceTree = "<group>";
@@ -145,6 +170,7 @@
 				9FC848D91423F374008AA377 /* main.m */,
 				9FC848DB1423F374008AA377 /* Raven App Manager-Prefix.pch */,
 				9FC848DC1423F374008AA377 /* Credits.rtf */,
+				9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,7 +192,7 @@
 			);
 			name = "Raven App Manager";
 			productName = "Raven App Manager";
-			productReference = 9FC848C91423F374008AA377 /* Raven App Manager.app */;
+			productReference = 9FC848C91423F374008AA377 /* rSDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -216,6 +242,12 @@
 				9F69AB8314273919003AE44B /* new.png in Resources */,
 				9F69AB8414273919003AE44B /* save.png in Resources */,
 				9F69AB8614273921003AE44B /* rSDK-IconTemplate.psd in Resources */,
+				9F69ABB11427BF91003AE44B /* down.png in Resources */,
+				9F69ABB21427BF91003AE44B /* up.png in Resources */,
+				9F2518311429C2E300809F2B /* rSDk in Resources */,
+				9F2518321429C2E300809F2B /* rSDk.icns in Resources */,
+				9F2518331429C2E300809F2B /* rSDk.ico in Resources */,
+				9F2518361429C2EC00809F2B /* rSDk.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +346,7 @@
 				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
 				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = rSDK;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -326,7 +358,7 @@
 				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
 				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = rSDK;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

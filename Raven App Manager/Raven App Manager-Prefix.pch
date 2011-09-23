@@ -4,4 +4,9 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+#define PLIST_PATH @"~/Library/Application Support/RavenApp/app/app.plist"
+#define PLIST_KEY_APPNAME @"appname"
+#define PLIST_KEY_FOLDER @"foldername"
+#define PLIST_KEY_URL @"URL"
+#define PLIST_KEY_DICTIONNARY @"app"
 #endif
