@@ -10,7 +10,6 @@
 #import "RAPlistManager.h"
 
 #define PSD_NAME @"rSDK-IconTemplate.psd"
-#define application_support_path @"~/Library/Application Support/RavenApp/app/"
 @implementation Raven_App_ManagerAppDelegate
 
 @synthesize window;
@@ -178,10 +177,16 @@
 
 -(void)deleteAnApp:(id)sender
 {
+    if ([tableview selectedRow] == -1) {
+        [self selectRowSheet];
+    }
+    else
+    {
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
     [listManager deleteAppAtIndex:[tableview selectedRow]];
     [listManager release]; 
     [tableview reloadData];
+    }
 }
 
 -(void)openTemplate:(id)sender
@@ -193,22 +198,84 @@
 
 -(void)moveItemUp:(id)sender
 {
+    if ([tableview selectedRow] == -1) {
+        [self selectRowSheet];
+    }
+    else
+    {
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
     [listManager swapObjectAtIndex:[tableview selectedRow] upOrDown:0];
     [tableview reloadData]; 
     [listManager release];
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:[tableview selectedRow]-1];
     [tableview selectRowIndexes:indexSet byExtendingSelection:NO];
+    }
 }
 
 -(void)moveItemDown:(id)sender
 {
+    if ([tableview selectedRow] == -1) {
+        [self selectRowSheet];
+    }
+    else
+    {
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
     [listManager swapObjectAtIndex:[tableview selectedRow] upOrDown:1];
     [tableview reloadData]; 
     [listManager release];
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:[tableview selectedRow]+1];
     [tableview selectRowIndexes:indexSet byExtendingSelection:NO];
+    }
+}
+
+-(void)exportSelectedApp:(id)sender
+{
+    if ([tableview selectedRow] == -1) {
+        [self selectRowSheet];
+
+    }
+    else
+    {
+        RAPlistManager *listManager = [[RAPlistManager alloc]init];
+        [listManager exportAppAtIndex:[tableview selectedRow]];
+        [listManager release];
+        NSAlert *alert = [[NSAlert alloc]init];
+        [alert setMessageText:@"App Exported to your desktop"];
+        [alert setInformativeText:@"The application has been exported to your desktop in a bundle format, to share it just zip it and send it"];
+        [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:nil contextInfo:nil];
+        [alert release];  
+    }
+   
+}
+
+-(void)importSelectedApp:(id)sender
+{
+    NSOpenPanel *tvarNSOpenPanelObj	= [NSOpenPanel openPanel];
+    [tvarNSOpenPanelObj setTitle:@"Please select an application bundle file that have been exported with rSDK"];
+    NSInteger tvarNSInteger	= [tvarNSOpenPanelObj runModal];
+    if(tvarNSInteger == NSOKButton){
+     		
+    } else if(tvarNSInteger == NSCancelButton) {
+     	
+     	return;
+    } else {
+     	return;
+    }  
+    
+    NSString * tvarDirectory = [[tvarNSOpenPanelObj URL]absoluteString];
+    tvarDirectory = [tvarDirectory stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
+    RAPlistManager *listManager = [[RAPlistManager alloc]init];
+    [listManager importAppAthPath:tvarDirectory];
+    [listManager release]; 
+    [tableview reloadData];
+}
+
+-(void)selectRowSheet
+{
+    NSAlert *alert = [[NSAlert alloc]init];
+    [alert setMessageText:@"Please select a row"];
+    [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:nil contextInfo:nil];
+    [alert release];
 }
 
 -(void)newWindow:(id)sender

@@ -9,4 +9,5 @@
 #define PLIST_KEY_FOLDER @"foldername"
 #define PLIST_KEY_URL @"URL"
 #define PLIST_KEY_DICTIONNARY @"app"
+#define application_support_path @"~/Library/Application Support/RavenApp/app/"
 #endif

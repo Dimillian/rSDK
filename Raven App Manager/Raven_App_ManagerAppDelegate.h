@@ -51,5 +51,8 @@
 -(IBAction)openTemplate:(id)sender;
 -(IBAction)moveItemUp:(id)sender;
 -(IBAction)moveItemDown:(id)sender;
+-(IBAction)exportSelectedApp:(id)sender;
+-(IBAction)importSelectedApp:(id)sender;
+-(void)selectRowSheet;
 
 @end

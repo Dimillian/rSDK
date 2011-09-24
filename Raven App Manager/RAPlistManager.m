@@ -96,11 +96,55 @@
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     NSMutableArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    NSMutableDictionary *appToDelete = [folders objectAtIndex:index];
+    NSString *folderName = [appToDelete objectForKey:PLIST_KEY_FOLDER];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:[[NSString stringWithFormat:application_support_path@"%@", folderName]stringByExpandingTildeInPath] error:nil];
     [folders removeObjectAtIndex:index];
     [dict setObject:folders forKey:PLIST_KEY_DICTIONNARY];
     [dict writeToFile:path atomically:YES];
     [folders release]; 
 
 }
+
+-(void)exportAppAtIndex:(NSInteger)index
+{
+    NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+    NSMutableArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    NSMutableDictionary *toSave = [folders objectAtIndex:index];
+    
+    
+    NSString *appFolder = [toSave objectForKey:PLIST_KEY_FOLDER];
+    NSString *applicationSupportPath = [[NSString stringWithFormat:application_support_path@"%@", appFolder]stringByExpandingTildeInPath];
+    NSString *desktopPath = [[NSString stringWithFormat:@"~/Desktop/RAvenApp_%@.bundle", appFolder] stringByExpandingTildeInPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *writePath = [[NSString stringWithFormat:@"%@/app.plist", desktopPath]stringByExpandingTildeInPath];
+    [fileManager copyItemAtPath:applicationSupportPath toPath:desktopPath error:nil];
+    [toSave writeToFile:writePath atomically:YES];
+    [folders release];
+}
+
+-(void)importAppAthPath:(NSString *)path
+{
+    NSString *realPath = [NSString stringWithFormat:@"%@/app.plist", path];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:realPath];
+    NSString *appFolder = [dict objectForKey:PLIST_KEY_FOLDER];
+    NSString *appPlist = [PLIST_PATH stringByExpandingTildeInPath];
+    NSMutableDictionary *dictToEdit = [NSMutableDictionary dictionaryWithContentsOfFile:appPlist];
+    NSMutableArray *folders = [[dictToEdit objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    [folders addObject:dict];
+    [dictToEdit setObject:folders forKey:PLIST_KEY_DICTIONNARY];
+    [dictToEdit writeToFile:appPlist atomically:YES];
+    
+    [folders release];
+    NSString *applicationSupportPath = [[NSString stringWithFormat:application_support_path@"%@", appFolder]stringByExpandingTildeInPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager copyItemAtPath:path toPath:applicationSupportPath error:nil];
+    [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/app.plist", applicationSupportPath] error:nil];
+
+}
+
+
 
 @end
