@@ -20,6 +20,9 @@
 		9F3C5F591424C2D800C82F6E /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F531424C2D800C82F6E /* trash.png */; };
 		9F3C5F5B1424C30900C82F6E /* raven_app_big.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */; };
 		9F3C5F5D1424C35B00C82F6E /* Raven.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C5F5C1424C35B00C82F6E /* Raven.ico */; };
+		9F62DF50142F2B6600C93563 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F62DF4F142F2B6600C93563 /* Sparkle.framework */; };
+		9F62DF53142F2BAA00C93563 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F62DF4F142F2B6600C93563 /* Sparkle.framework */; };
+		9F62DF55142F2C6700C93563 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9F62DF54142F2C6700C93563 /* dsa_pub.pem */; };
 		9F69AB6D142728F2003AE44B /* Raven.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB6C142728F2003AE44B /* Raven.icns */; };
 		9F69AB7D1427341E003AE44B /* Builder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB7C1427341E003AE44B /* Builder.icns */; };
 		9F69AB8214273919003AE44B /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB7F14273919003AE44B /* delete.png */; };
@@ -36,6 +39,19 @@
 		9FC848E41423F374008AA377 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848E21423F374008AA377 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9F62DF52142F2B9B00C93563 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9F62DF53142F2BAA00C93563 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9F25182E1429C2E300809F2B /* rSDk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rSDk; sourceTree = "<group>"; };
 		9F25182F1429C2E300809F2B /* rSDk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rSDk.icns; sourceTree = "<group>"; };
@@ -51,6 +67,8 @@
 		9F3C5F531424C2D800C82F6E /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 		9F3C5F5A1424C30900C82F6E /* raven_app_big.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = raven_app_big.ico; path = ../raven_app_big.ico; sourceTree = "<group>"; };
 		9F3C5F5C1424C35B00C82F6E /* Raven.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = Raven.ico; path = ../Raven.ico; sourceTree = "<group>"; };
+		9F62DF4F142F2B6600C93563 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		9F62DF54142F2C6700C93563 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		9F69AB6C142728F2003AE44B /* Raven.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Raven.icns; path = ../Raven.icns; sourceTree = "<group>"; };
 		9F69AB7C1427341E003AE44B /* Builder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Builder.icns; path = ../Builder.icns; sourceTree = "<group>"; };
 		9F69AB7F14273919003AE44B /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = ../delete.png; sourceTree = "<group>"; };
@@ -80,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC848CE1423F374008AA377 /* Cocoa.framework in Frameworks */,
+				9F62DF50142F2B6600C93563 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +151,7 @@
 		9FC848CC1423F374008AA377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F62DF4F142F2B6600C93563 /* Sparkle.framework */,
 				9FC848CD1423F374008AA377 /* Cocoa.framework */,
 				9FC848CF1423F374008AA377 /* Other Frameworks */,
 			);
@@ -165,6 +185,7 @@
 		9FC848D41423F374008AA377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F62DF54142F2C6700C93563 /* dsa_pub.pem */,
 				9FC848D51423F374008AA377 /* Raven App Manager-Info.plist */,
 				9FC848D61423F374008AA377 /* InfoPlist.strings */,
 				9FC848D91423F374008AA377 /* main.m */,
@@ -184,6 +205,7 @@
 			buildPhases = (
 				9FC848C51423F374008AA377 /* Sources */,
 				9FC848C61423F374008AA377 /* Frameworks */,
+				9F62DF52142F2B9B00C93563 /* CopyFiles */,
 				9FC848C71423F374008AA377 /* Resources */,
 			);
 			buildRules = (
@@ -248,6 +270,7 @@
 				9F2518321429C2E300809F2B /* rSDk.icns in Resources */,
 				9F2518331429C2E300809F2B /* rSDk.ico in Resources */,
 				9F2518361429C2EC00809F2B /* rSDk.icns in Resources */,
+				9F62DF55142F2C6700C93563 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +365,10 @@
 		9FC848E81423F374008AA377 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
 				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";
@@ -354,6 +381,10 @@
 		9FC848E91423F374008AA377 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Raven App Manager/Raven App Manager-Prefix.pch";
 				INFOPLIST_FILE = "Raven App Manager/Raven App Manager-Info.plist";

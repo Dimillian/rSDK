@@ -252,6 +252,7 @@
 {
     NSOpenPanel *tvarNSOpenPanelObj	= [NSOpenPanel openPanel];
     [tvarNSOpenPanelObj setTitle:@"Please select an application bundle file that have been exported with rSDK"];
+    [tvarNSOpenPanelObj setAllowedFileTypes:[NSArray arrayWithObject:@"bundle"]];
     NSInteger tvarNSInteger	= [tvarNSOpenPanelObj runModal];
     if(tvarNSInteger == NSOKButton){
      		
