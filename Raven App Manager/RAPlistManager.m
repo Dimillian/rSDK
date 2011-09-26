@@ -117,7 +117,7 @@
     
     NSString *appFolder = [toSave objectForKey:PLIST_KEY_FOLDER];
     NSString *applicationSupportPath = [[NSString stringWithFormat:application_support_path@"%@", appFolder]stringByExpandingTildeInPath];
-    NSString *desktopPath = [[NSString stringWithFormat:@"~/Desktop/RAvenApp_%@.bundle", appFolder] stringByExpandingTildeInPath];
+    NSString *desktopPath = [[NSString stringWithFormat:@"~/Desktop/RavenApp_%@.rpa", appFolder] stringByExpandingTildeInPath];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *writePath = [[NSString stringWithFormat:@"%@/app.plist", desktopPath]stringByExpandingTildeInPath];
     [fileManager copyItemAtPath:applicationSupportPath toPath:desktopPath error:nil];
@@ -129,22 +129,29 @@
 {
     NSString *realPath = [NSString stringWithFormat:@"%@/app.plist", path];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:realPath];
-    NSString *appFolder = [dict objectForKey:PLIST_KEY_FOLDER];
-    NSString *appPlist = [PLIST_PATH stringByExpandingTildeInPath];
-    NSMutableDictionary *dictToEdit = [NSMutableDictionary dictionaryWithContentsOfFile:appPlist];
-    NSMutableArray *folders = [[dictToEdit objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
-    [folders addObject:dict];
-    [dictToEdit setObject:folders forKey:PLIST_KEY_DICTIONNARY];
-    [dictToEdit writeToFile:appPlist atomically:YES];
-    
-    [folders release];
-    NSString *applicationSupportPath = [[NSString stringWithFormat:application_support_path@"%@", appFolder]stringByExpandingTildeInPath];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager copyItemAtPath:path toPath:applicationSupportPath error:nil];
-    [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/app.plist", applicationSupportPath] error:nil];
+    if (dict == nil) {
+        NSAlert *alert  = [[NSAlert alloc]init];
+        [alert setInformativeText:NSLocalizedString(@"Please use an application bundle made with this SDK", @"InvalideAppBundleInformative")];
+        [alert setMessageText:NSLocalizedString(@"This application bundle is invalide", @"InvalideAppBundleMessage")];
+         [alert runModal]; 
+         [alert release]; 
+    }
+    else {
+        NSString *appFolder = [dict objectForKey:PLIST_KEY_FOLDER];
+        NSString *appPlist = [PLIST_PATH stringByExpandingTildeInPath];
+        NSMutableDictionary *dictToEdit = [NSMutableDictionary dictionaryWithContentsOfFile:appPlist];
+        NSMutableArray *folders = [[dictToEdit objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+        [folders addObject:dict];
+        [dictToEdit setObject:folders forKey:PLIST_KEY_DICTIONNARY];
+        [dictToEdit writeToFile:appPlist atomically:YES];
+        
+        [folders release];
+        NSString *applicationSupportPath = [[NSString stringWithFormat:application_support_path@"%@", appFolder]stringByExpandingTildeInPath];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager copyItemAtPath:path toPath:applicationSupportPath error:nil];
+        [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/app.plist", applicationSupportPath] error:nil];
+    }
 
 }
-
-
 
 @end

@@ -55,6 +55,33 @@
 
 }
 
+-(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
+{
+    opennedDocumentPath = filename;
+    [opennedDocumentPath retain];
+    NSAlert *alert = [[NSAlert alloc]init];
+    [alert setMessageText:NSLocalizedString(@"Do you want to import this application ?", @"prompt")];
+    [alert setInformativeText:NSLocalizedString(@"Maybe you already have this application installed, it may create a duplicate.", @"Continue")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", @"Yeah")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel")];
+    //call the alert and check the selected button
+    [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    [alert release];
+    return YES;
+}
+
+
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if (returnCode == NSAlertFirstButtonReturn) {
+        RAPlistManager *listManager = [[RAPlistManager alloc]init];
+        [listManager importAppAthPath:opennedDocumentPath];
+        [opennedDocumentPath retain];
+        [listManager release]; 
+        [tableview reloadData]; 
+    }
+}
+
+
  
 - (id)tableView:(NSTableView *)tableView
  objectValueForTableColumn:(NSTableColumn *)tableColumn
@@ -145,9 +172,9 @@
 {
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
     [listManager writeToPlistWithAppName:@"New app" folderName:@"Set the folder name" withURL1:@"URL1" URL2:@"URL2" URL3:@"URL3" URL4:@"URL4" atIndex:[tableview numberOfRows] +1];
-     [listManager release]; 
+    [listManager release]; 
     [tableview selectRowIndexes:[NSIndexSet indexSetWithIndex:[tableview numberOfRows]] byExtendingSelection:NO];
-     [tableview reloadData];
+    [tableview reloadData];
 }
 
 -(void)saveApp:(id)sender
@@ -252,23 +279,23 @@
 {
     NSOpenPanel *tvarNSOpenPanelObj	= [NSOpenPanel openPanel];
     [tvarNSOpenPanelObj setTitle:@"Please select an application bundle file that have been exported with rSDK"];
-    [tvarNSOpenPanelObj setAllowedFileTypes:[NSArray arrayWithObject:@"bundle"]];
+    [tvarNSOpenPanelObj setAllowedFileTypes:[NSArray arrayWithObject:@"rpa"]];
     NSInteger tvarNSInteger	= [tvarNSOpenPanelObj runModal];
     if(tvarNSInteger == NSOKButton){
-     		
+        NSString * tvarDirectory = [[tvarNSOpenPanelObj URL]absoluteString];
+        tvarDirectory = [tvarDirectory stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
+        RAPlistManager *listManager = [[RAPlistManager alloc]init];
+        [listManager importAppAthPath:tvarDirectory];
+        [listManager release]; 
+        [tableview reloadData];
     } else if(tvarNSInteger == NSCancelButton) {
      	
      	return;
     } else {
      	return;
     }  
+   
     
-    NSString * tvarDirectory = [[tvarNSOpenPanelObj URL]absoluteString];
-    tvarDirectory = [tvarDirectory stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
-    RAPlistManager *listManager = [[RAPlistManager alloc]init];
-    [listManager importAppAthPath:tvarDirectory];
-    [listManager release]; 
-    [tableview reloadData];
 }
 
 -(void)selectRowSheet
