@@ -19,7 +19,9 @@
     [tableview setDataSource:self]; 
     [tableview setDelegate:self];
     [tableview setAllowsEmptySelection:NO];
-    
+    RAPlistManager *listManager = [[RAPlistManager alloc]init]; 
+    [listManager updateProcess]; 
+    [listManager release];
     // Create a FileManager object, we will use this to check the status
 	// of the database and to copy it over if required
 	NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -32,8 +34,7 @@
     templatePath  = [applicationSupport stringByAppendingPathComponent:PSD_NAME]; 
     [templatePath retain]; 
     
-    BOOL successPath;
-    
+    BOOL successPath; 
     successPath = [fileManager fileExistsAtPath:templatePath];
 	if(successPath) return;
 
@@ -53,21 +54,6 @@
     [folders release]; 
     return count;
 
-}
-
--(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
-{
-    opennedDocumentPath = filename;
-    [opennedDocumentPath retain];
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert setMessageText:NSLocalizedString(@"Do you want to import this application ?", @"prompt")];
-    [alert setInformativeText:NSLocalizedString(@"Maybe you already have this application installed, it may create a duplicate.", @"Continue")];
-    [alert addButtonWithTitle:NSLocalizedString(@"Yes", @"Yeah")];
-    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel")];
-    //call the alert and check the selected button
-    [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
-    [alert release];
-    return YES;
 }
 
 
@@ -116,6 +102,13 @@
     NSString *folderName = [item objectForKey:PLIST_KEY_FOLDER];
     [folderNameField setStringValue:[item objectForKey:PLIST_KEY_FOLDER]];
     [appNameField setStringValue:[item objectForKey:PLIST_KEY_APPNAME]];
+    if ([item objectForKey:PLIST_KEY_UDID] != nil) {
+            [udidField setStringValue:[item objectForKey:PLIST_KEY_UDID]];
+    }
+    else
+    {
+        [udidField setStringValue:@"com.yourname.appname"];
+    }
     NSArray *URL = [[item objectForKey:PLIST_KEY_URL]mutableCopy]; 
     [firstUrl setStringValue:[URL objectAtIndex:0]];
     [secondUrl setStringValue:[URL objectAtIndex:1]];
@@ -171,7 +164,7 @@
 -(void)addAnApp:(id)sender
 {
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
-    [listManager writeToPlistWithAppName:@"New app" folderName:@"Set the folder name" withURL1:@"URL1" URL2:@"URL2" URL3:@"URL3" URL4:@"URL4" atIndex:[tableview numberOfRows] +1];
+    [listManager writeToPlistWithAppName:@"New app" folderName:@"Set the folder name" withURL1:@"URL1" URL2:@"URL2" URL3:@"URL3" URL4:@"URL4" atIndex:[tableview numberOfRows] +1 withUdid:@"com.yourname.appname"];
     [listManager release]; 
     [tableview selectRowIndexes:[NSIndexSet indexSetWithIndex:[tableview numberOfRows]] byExtendingSelection:NO];
     [tableview reloadData];
@@ -196,7 +189,7 @@
     [[[smallIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/main.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
     [[[bigIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/main_big.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
-    [listManager writeToPlistWithAppName:[appNameField stringValue] folderName:[folderNameField stringValue] withURL1:[firstUrl stringValue] URL2:[secondUrl stringValue] URL3:[thirdUrl stringValue] URL4:[fourUrl stringValue] atIndex:[tableview selectedRow]];
+    [listManager writeToPlistWithAppName:[appNameField stringValue] folderName:[folderNameField stringValue] withURL1:[firstUrl stringValue] URL2:[secondUrl stringValue] URL3:[thirdUrl stringValue] URL4:[fourUrl stringValue] atIndex:[tableview selectedRow] withUdid:[udidField stringValue]];
     [listManager release]; 
     [tableview reloadData];
 

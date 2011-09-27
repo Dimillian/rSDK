@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1685421431D62800C112A1 /* export.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F16853F1431D62800C112A1 /* export.png */; };
+		9F1685431431D62800C112A1 /* import.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1685401431D62800C112A1 /* import.png */; };
+		9F1685441431D62800C112A1 /* template.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1685411431D62800C112A1 /* template.png */; };
 		9F2518311429C2E300809F2B /* rSDk in Resources */ = {isa = PBXBuildFile; fileRef = 9F25182E1429C2E300809F2B /* rSDk */; };
 		9F2518321429C2E300809F2B /* rSDk.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9F25182F1429C2E300809F2B /* rSDk.icns */; };
 		9F2518331429C2E300809F2B /* rSDk.ico in Resources */ = {isa = PBXBuildFile; fileRef = 9F2518301429C2E300809F2B /* rSDk.ico */; };
@@ -53,6 +56,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F16853F1431D62800C112A1 /* export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = export.png; sourceTree = "<group>"; };
+		9F1685401431D62800C112A1 /* import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = import.png; sourceTree = "<group>"; };
+		9F1685411431D62800C112A1 /* template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = template.png; sourceTree = "<group>"; };
 		9F25182E1429C2E300809F2B /* rSDk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rSDk; sourceTree = "<group>"; };
 		9F25182F1429C2E300809F2B /* rSDk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rSDk.icns; sourceTree = "<group>"; };
 		9F2518301429C2E300809F2B /* rSDk.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = rSDk.ico; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 		9F69AB991427850B003AE44B /* ressources */ = {
 			isa = PBXGroup;
 			children = (
+				9F16853F1431D62800C112A1 /* export.png */,
+				9F1685401431D62800C112A1 /* import.png */,
+				9F1685411431D62800C112A1 /* template.png */,
 				9F25182E1429C2E300809F2B /* rSDk */,
 				9F25182F1429C2E300809F2B /* rSDk.icns */,
 				9F2518301429C2E300809F2B /* rSDk.ico */,
@@ -271,6 +280,9 @@
 				9F2518331429C2E300809F2B /* rSDk.ico in Resources */,
 				9F2518361429C2EC00809F2B /* rSDk.icns in Resources */,
 				9F62DF55142F2C6700C93563 /* dsa_pub.pem in Resources */,
+				9F1685421431D62800C112A1 /* export.png in Resources */,
+				9F1685431431D62800C112A1 /* import.png in Resources */,
+				9F1685441431D62800C112A1 /* template.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

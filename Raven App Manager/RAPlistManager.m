@@ -22,7 +22,7 @@
 
 
 -(void)writeToPlistWithAppName:(NSString *)appname folderName:(NSString *)folderName 
-                      withURL1:(NSString *)URL1 URL2:(NSString *)URL2 URL3:(NSString *)URL3 URL4:(NSString *)URL4 atIndex:(NSInteger)index
+                      withURL1:(NSString *)URL1 URL2:(NSString *)URL2 URL3:(NSString *)URL3 URL4:(NSString *)URL4 atIndex:(NSInteger)index withUdid:(NSString *)udid
 {
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
@@ -32,6 +32,7 @@
         NSMutableDictionary *newapp= [[NSMutableDictionary alloc]initWithCapacity:3];
         [newapp setObject:appname forKey:PLIST_KEY_APPNAME];
         [newapp setObject:folderName forKey:PLIST_KEY_FOLDER];
+        [newapp setObject:udid forKey:PLIST_KEY_UDID];
         [URLs addObject:URL1];
         [URLs addObject:URL2];
         [URLs addObject:URL3];
@@ -50,6 +51,7 @@
         NSMutableArray *URL = [item objectForKey:PLIST_KEY_URL];
         [item setObject:appname forKey:PLIST_KEY_APPNAME]; 
         [item setObject:folderName forKey:PLIST_KEY_FOLDER]; 
+        [item setObject:udid forKey:PLIST_KEY_UDID];
         [URL removeAllObjects]; 
         [URL addObject:URL1]; 
         [URL addObject:URL2]; 
@@ -152,6 +154,31 @@
         [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/app.plist", applicationSupportPath] error:nil];
     }
 
+}
+
+-(void)updateProcess
+{  
+    NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+    NSMutableArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    NSInteger count  = [folders count];
+    NSInteger x; 
+    for (x=0; x<count; x++) {
+        NSMutableDictionary *item = [folders objectAtIndex:x];
+        if ([item objectForKey:PLIST_KEY_UDID] == nil) {
+            NSString *udid = [NSString stringWithFormat:@"com.yourname.%@", [item objectForKey:PLIST_KEY_APPNAME]];
+            [item setObject:udid forKey:PLIST_KEY_UDID];
+        }
+        if ([item objectForKey:PLIST_KEY_ENABLE] == nil){
+            [item setObject:[NSNumber numberWithInt:1] forKey:PLIST_KEY_ENABLE];
+        }
+        [folders replaceObjectAtIndex:x withObject:item];
+    }
+    [dict setObject:folders forKey:PLIST_KEY_DICTIONNARY];
+    [dict writeToFile:path atomically:YES];
+    [folders release]; 
+    
+    
 }
 
 @end

@@ -36,6 +36,7 @@
     IBOutlet NSTextField *smallIconText; 
     IBOutlet NSTextField *bigIconSecondText; 
     IBOutlet NSTextField *smallIconSecondText;
+    IBOutlet NSTextField *udidField; 
     
     IBOutlet NSTableColumn *imageColumn; 
     IBOutlet NSTableColumn *textColumn;
