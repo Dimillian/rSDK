@@ -22,7 +22,7 @@
 
 
 -(void)writeToPlistWithAppName:(NSString *)appname folderName:(NSString *)folderName 
-                      withURL1:(NSString *)URL1 URL2:(NSString *)URL2 URL3:(NSString *)URL3 URL4:(NSString *)URL4 atIndex:(NSInteger)index withUdid:(NSString *)udid
+                      withURL1:(NSString *)URL1 URL2:(NSString *)URL2 URL3:(NSString *)URL3 URL4:(NSString *)URL4 atIndex:(NSInteger)index withUdid:(NSString *)udid withState:(NSNumber *)state
 {
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
@@ -33,6 +33,7 @@
         [newapp setObject:appname forKey:PLIST_KEY_APPNAME];
         [newapp setObject:folderName forKey:PLIST_KEY_FOLDER];
         [newapp setObject:udid forKey:PLIST_KEY_UDID];
+        [newapp setObject:state forKey:PLIST_KEY_ENABLE];
         [URLs addObject:URL1];
         [URLs addObject:URL2];
         [URLs addObject:URL3];
@@ -52,6 +53,7 @@
         [item setObject:appname forKey:PLIST_KEY_APPNAME]; 
         [item setObject:folderName forKey:PLIST_KEY_FOLDER]; 
         [item setObject:udid forKey:PLIST_KEY_UDID];
+        [item setObject:state forKey:PLIST_KEY_ENABLE];
         [URL removeAllObjects]; 
         [URL addObject:URL1]; 
         [URL addObject:URL2]; 
@@ -119,7 +121,7 @@
     
     NSString *appFolder = [toSave objectForKey:PLIST_KEY_FOLDER];
     NSString *applicationSupportPath = [[NSString stringWithFormat:application_support_path@"%@", appFolder]stringByExpandingTildeInPath];
-    NSString *desktopPath = [[NSString stringWithFormat:@"~/Desktop/RavenApp_%@.rpa", appFolder] stringByExpandingTildeInPath];
+    NSString *desktopPath = [[NSString stringWithFormat:@"~/Desktop/%@.sba", appFolder] stringByExpandingTildeInPath];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *writePath = [[NSString stringWithFormat:@"%@/app.plist", desktopPath]stringByExpandingTildeInPath];
     [fileManager copyItemAtPath:applicationSupportPath toPath:desktopPath error:nil];
@@ -152,18 +154,17 @@
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager copyItemAtPath:path toPath:applicationSupportPath error:nil];
         [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/app.plist", applicationSupportPath] error:nil];
+        [self updateProcess];
     }
 
 }
 
 -(void)updateProcess
-{  
+{
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     NSMutableArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
-    NSInteger count  = [folders count];
-    NSInteger x; 
-    for (x=0; x<count; x++) {
+    for (int x=0; x<[folders count]; x++) {
         NSMutableDictionary *item = [folders objectAtIndex:x];
         if ([item objectForKey:PLIST_KEY_UDID] == nil) {
             NSString *udid = [NSString stringWithFormat:@"com.yourname.%@", [item objectForKey:PLIST_KEY_APPNAME]];
@@ -177,7 +178,35 @@
     [dict setObject:folders forKey:PLIST_KEY_DICTIONNARY];
     [dict writeToFile:path atomically:YES];
     [folders release]; 
+}
+
+
+-(void)changeStateOfAppAtIndex:(NSInteger)index withState:(NSInteger)state
+{
+    NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+    NSMutableArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    NSMutableDictionary *item = [folders objectAtIndex:index]; 
+    [item setObject:[NSNumber numberWithInteger:state] forKey:PLIST_KEY_ENABLE];
+    [folders replaceObjectAtIndex:index withObject:item];
+    [dict setObject:folders forKey:PLIST_KEY_DICTIONNARY]; 
+    [dict writeToFile:path atomically:YES];
+    [folders release]; 
     
+    
+    
+}
+
+
+-(NSInteger)returnStateOfAppAtIndex:(NSInteger)index
+{
+    NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+    NSMutableArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    NSMutableDictionary *item = [folders objectAtIndex:index]; 
+    NSNumber *state = [item objectForKey:PLIST_KEY_ENABLE]; 
+    [folders release];
+    return [state integerValue];
     
 }
 

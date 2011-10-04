@@ -41,6 +41,8 @@
     IBOutlet NSTableColumn *imageColumn; 
     IBOutlet NSTableColumn *textColumn;
     
+    
+    
     NSString *opennedDocumentPath;
     
     

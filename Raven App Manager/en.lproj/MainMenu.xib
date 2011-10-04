@@ -1424,7 +1424,6 @@
 											<string key="NSFrame">{{165, 20}, {358, 22}}</string>
 											<reference key="NSSuperview" ref="1015783934"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
 											<string key="NSReuseIdentifierKey">_NS:248</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="451889892">
@@ -1657,7 +1656,7 @@
 											<string key="NSFrame">{{267, 137}, {110, 15}}</string>
 											<reference key="NSSuperview" ref="295130795"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="848613439"/>
+											<reference key="NSNextKeyView"/>
 											<string key="NSReuseIdentifierKey">_NS:3936</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="179073202">
@@ -2056,7 +2055,7 @@
 											<string key="NSFrameSize">{200, 430}</string>
 											<reference key="NSSuperview" ref="404577571"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="112904659"/>
+											<reference key="NSNextKeyView" ref="517888077"/>
 											<string key="NSReuseIdentifierKey">_NS:1197</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="_NSCornerView" key="NSCornerView">
@@ -2204,7 +2203,7 @@
 							<string key="NSFrame">{{-1, 0}, {202, 432}}</string>
 							<reference key="NSSuperview" ref="713326391"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="517888077"/>
+							<reference key="NSNextKeyView" ref="404577571"/>
 							<string key="NSReuseIdentifierKey">_NS:1193</string>
 							<int key="NSsFlags">150034</int>
 							<reference key="NSVScroller" ref="517888077"/>
@@ -4933,7 +4932,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">910</int>
+			<int key="maxID">914</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

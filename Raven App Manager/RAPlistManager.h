@@ -18,11 +18,14 @@
                           URL3:(NSString *)URL3 
                           URL4:(NSString *)URL4 
                        atIndex:(NSInteger)index
-                      withUdid:(NSString *)udid;
+                      withUdid:(NSString *)udid
+                        withState:(NSNumber *)state;
 
 -(void)deleteAppAtIndex:(NSInteger)index;
 -(void)swapObjectAtIndex:(NSInteger)index upOrDown:(NSInteger)order;
 -(void)exportAppAtIndex:(NSInteger)index; 
 -(void)importAppAthPath:(NSString *)path;
 -(void)updateProcess;
+-(void)changeStateOfAppAtIndex:(NSInteger)index withState:(NSInteger)state;
+-(NSInteger)returnStateOfAppAtIndex:(NSInteger)index;
 @end

@@ -156,6 +156,7 @@
         [bigIconSecondText setHidden:NO];  
     }
     
+    
     [folders release]; 
     [URL release]; 
     
@@ -164,7 +165,12 @@
 -(void)addAnApp:(id)sender
 {
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
-    [listManager writeToPlistWithAppName:@"New app" folderName:@"Set the folder name" withURL1:@"URL1" URL2:@"URL2" URL3:@"URL3" URL4:@"URL4" atIndex:[tableview numberOfRows] +1 withUdid:@"com.yourname.appname"];
+    [listManager writeToPlistWithAppName:@"New app" 
+                              folderName:@"Set the folder name" 
+                                withURL1:@"URL1" URL2:@"URL2" URL3:@"URL3" URL4:@"URL4" 
+                                 atIndex:[tableview numberOfRows] +1 
+                                withUdid:@"com.yourname.appname"
+                               withState:[NSNumber numberWithInteger:1]];
     [listManager release]; 
     [tableview selectRowIndexes:[NSIndexSet indexSetWithIndex:[tableview numberOfRows]] byExtendingSelection:NO];
     [tableview reloadData];
@@ -189,7 +195,15 @@
     [[[smallIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/main.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
     [[[bigIcon image] TIFFRepresentation] writeToFile:[[NSString stringWithFormat:application_support_path@"%@/main_big.png", [folderNameField stringValue]]stringByExpandingTildeInPath] atomically:YES];
     RAPlistManager *listManager = [[RAPlistManager alloc]init];
-    [listManager writeToPlistWithAppName:[appNameField stringValue] folderName:[folderNameField stringValue] withURL1:[firstUrl stringValue] URL2:[secondUrl stringValue] URL3:[thirdUrl stringValue] URL4:[fourUrl stringValue] atIndex:[tableview selectedRow] withUdid:[udidField stringValue]];
+    [listManager writeToPlistWithAppName:[appNameField stringValue] 
+                              folderName:[folderNameField stringValue] 
+                                withURL1:[firstUrl stringValue] 
+                                    URL2:[secondUrl stringValue] 
+                                    URL3:[thirdUrl stringValue] 
+                                    URL4:[fourUrl stringValue] 
+                                 atIndex:[tableview selectedRow] 
+                                withUdid:[udidField stringValue] 
+                               withState:[NSNumber numberWithInteger:1]];
     [listManager release]; 
     [tableview reloadData];
 
@@ -272,7 +286,7 @@
 {
     NSOpenPanel *tvarNSOpenPanelObj	= [NSOpenPanel openPanel];
     [tvarNSOpenPanelObj setTitle:@"Please select an application bundle file that have been exported with rSDK"];
-    [tvarNSOpenPanelObj setAllowedFileTypes:[NSArray arrayWithObject:@"rpa"]];
+    [tvarNSOpenPanelObj setAllowedFileTypes:[NSArray arrayWithObjects:@"rpa", @"sba", nil]];
     NSInteger tvarNSInteger	= [tvarNSOpenPanelObj runModal];
     if(tvarNSInteger == NSOKButton){
         NSString * tvarDirectory = [[tvarNSOpenPanelObj URL]absoluteString];
