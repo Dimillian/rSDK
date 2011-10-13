@@ -76,7 +76,7 @@
  
      NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
      NSDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-     NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+     NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY]copy];
     NSDictionary *item = [folders objectAtIndex:row];
     NSString *appName = [item objectForKey:PLIST_KEY_APPNAME];
      NSString *folderNameTemp = [item objectForKey:PLIST_KEY_FOLDER];
@@ -97,10 +97,12 @@
 {
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-    NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY] mutableCopy];
+    NSArray *folders = [[dict objectForKey:PLIST_KEY_DICTIONNARY]copy];
     NSDictionary *item = [folders objectAtIndex:[tableview selectedRow]];
     NSString *folderName = [item objectForKey:PLIST_KEY_FOLDER];
     [folderNameField setStringValue:[item objectForKey:PLIST_KEY_FOLDER]];
+    [categoryButton selectItemWithTitle:[item objectForKey:PLIST_KEY_CATEGORY]];
+    [officialStateButton selectItemWithTitle:[item objectForKey:PLIST_KEY_OFFICIAL]];
     [appNameField setStringValue:[item objectForKey:PLIST_KEY_APPNAME]];
     if ([item objectForKey:PLIST_KEY_UDID] != nil) {
             [udidField setStringValue:[item objectForKey:PLIST_KEY_UDID]];
@@ -109,7 +111,7 @@
     {
         [udidField setStringValue:@"com.yourname.appname"];
     }
-    NSArray *URL = [[item objectForKey:PLIST_KEY_URL]mutableCopy]; 
+    NSArray *URL = [[item objectForKey:PLIST_KEY_URL]copy]; 
     [firstUrl setStringValue:[URL objectAtIndex:0]];
     [secondUrl setStringValue:[URL objectAtIndex:1]];
     [thirdUrl setStringValue:[URL objectAtIndex:2]];
@@ -170,7 +172,9 @@
                                 withURL1:@"URL1" URL2:@"URL2" URL3:@"URL3" URL4:@"URL4" 
                                  atIndex:[tableview numberOfRows] +1 
                                 withUdid:@"com.yourname.appname"
-                               withState:[NSNumber numberWithInteger:1]];
+                               withState:[NSNumber numberWithInteger:1] 
+                            withCategory:@"No categorie" 
+                       withOfficialState:@"Unofficial"];
     [listManager release]; 
     [tableview selectRowIndexes:[NSIndexSet indexSetWithIndex:[tableview numberOfRows]] byExtendingSelection:NO];
     [tableview reloadData];
@@ -203,7 +207,9 @@
                                     URL4:[fourUrl stringValue] 
                                  atIndex:[tableview selectedRow] 
                                 withUdid:[udidField stringValue] 
-                               withState:[NSNumber numberWithInteger:1]];
+                               withState:[NSNumber numberWithInteger:1] 
+                            withCategory:[[categoryButton selectedItem]title] 
+                       withOfficialState:[[officialStateButton selectedItem]title]];
     [listManager release]; 
     [tableview reloadData];
 

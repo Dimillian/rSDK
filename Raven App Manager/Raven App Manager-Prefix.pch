@@ -11,5 +11,7 @@
 #define PLIST_KEY_DICTIONNARY @"app"
 #define PLIST_KEY_UDID @"udid"
 #define PLIST_KEY_ENABLE @"enable"
+#define PLIST_KEY_CATEGORY @"category"
+#define PLIST_KEY_OFFICIAL @"offical"
 #define application_support_path @"~/Library/Application Support/RavenApp/app/"
 #endif

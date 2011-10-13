@@ -19,7 +19,10 @@
                           URL4:(NSString *)URL4 
                        atIndex:(NSInteger)index
                       withUdid:(NSString *)udid
-                        withState:(NSNumber *)state;
+                    withState:(NSNumber *)state
+                    withCategory:(NSString *)category
+                    withOfficialState:(NSString *)official;
+                        
 
 -(void)deleteAppAtIndex:(NSInteger)index;
 -(void)swapObjectAtIndex:(NSInteger)index upOrDown:(NSInteger)order;

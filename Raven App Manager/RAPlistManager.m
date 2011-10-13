@@ -22,7 +22,15 @@
 
 
 -(void)writeToPlistWithAppName:(NSString *)appname folderName:(NSString *)folderName 
-                      withURL1:(NSString *)URL1 URL2:(NSString *)URL2 URL3:(NSString *)URL3 URL4:(NSString *)URL4 atIndex:(NSInteger)index withUdid:(NSString *)udid withState:(NSNumber *)state
+                      withURL1:(NSString *)URL1 
+                          URL2:(NSString *)URL2 
+                          URL3:(NSString *)URL3 
+                          URL4:(NSString *)URL4 
+                       atIndex:(NSInteger)index 
+                      withUdid:(NSString *)udid 
+                     withState:(NSNumber *)state 
+                  withCategory:(NSString *)category
+             withOfficialState:(NSString *)official
 {
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
@@ -34,6 +42,8 @@
         [newapp setObject:folderName forKey:PLIST_KEY_FOLDER];
         [newapp setObject:udid forKey:PLIST_KEY_UDID];
         [newapp setObject:state forKey:PLIST_KEY_ENABLE];
+        [newapp setObject:category forKey:PLIST_KEY_CATEGORY];
+        [newapp setObject:official forKey:PLIST_KEY_OFFICIAL];
         [URLs addObject:URL1];
         [URLs addObject:URL2];
         [URLs addObject:URL3];
@@ -54,6 +64,8 @@
         [item setObject:folderName forKey:PLIST_KEY_FOLDER]; 
         [item setObject:udid forKey:PLIST_KEY_UDID];
         [item setObject:state forKey:PLIST_KEY_ENABLE];
+        [item setObject:category forKey:PLIST_KEY_CATEGORY];
+        [item setObject:official forKey:PLIST_KEY_OFFICIAL];
         [URL removeAllObjects]; 
         [URL addObject:URL1]; 
         [URL addObject:URL2]; 
@@ -172,6 +184,12 @@
         }
         if ([item objectForKey:PLIST_KEY_ENABLE] == nil){
             [item setObject:[NSNumber numberWithInt:1] forKey:PLIST_KEY_ENABLE];
+        }
+        if ([item objectForKey:PLIST_KEY_CATEGORY] == nil) {
+            [item setObject:@"No categorie" forKey:PLIST_KEY_CATEGORY];
+        }
+        if ([item objectForKey:PLIST_KEY_OFFICIAL] == nil) {
+            [item setObject:@"Unofficial" forKey:PLIST_KEY_OFFICIAL];
         }
         [folders replaceObjectAtIndex:x withObject:item];
     }

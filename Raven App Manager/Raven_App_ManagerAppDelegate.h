@@ -41,6 +41,9 @@
     IBOutlet NSTableColumn *imageColumn; 
     IBOutlet NSTableColumn *textColumn;
     
+    IBOutlet NSPopUpButton *categoryButton; 
+    IBOutlet NSPopUpButton *officialStateButton;
+    
     
     
     NSString *opennedDocumentPath;
