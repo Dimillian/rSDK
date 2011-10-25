@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Raven App Manager/Raven_App_ManagerAppDelegate.m"
-         timestampString = "338828340.421729"
+         timestampString = "341157225.024733"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-tableView:objectValueForTableColumn:row:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,13 +23,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Raven App Manager/Raven_App_ManagerAppDelegate.m"
-         timestampString = "340138186.603838"
+         timestampString = "341157225.024733"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "180"
-         endingLineNumber = "180"
-         landmarkName = "-addAnApp:"
-         landmarkType = "5">
+         startingLineNumber = "198"
+         endingLineNumber = "198"
+         landmarkName = "@implementation Raven_App_ManagerAppDelegate"
+         landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -4,7 +4,7 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
-#define PLIST_PATH @"~/Library/Application Support/RavenApp/app/app.plist"
+#define PLIST_PATH @"~/Library/Application Support/RavenApp/appManager/app/app.plist"
 #define PLIST_KEY_APPNAME @"appname"
 #define PLIST_KEY_FOLDER @"foldername"
 #define PLIST_KEY_URL @"URL"
@@ -13,5 +13,7 @@
 #define PLIST_KEY_ENABLE @"enable"
 #define PLIST_KEY_CATEGORY @"category"
 #define PLIST_KEY_OFFICIAL @"offical"
-#define application_support_path @"~/Library/Application Support/RavenApp/app/"
+#define application_support_path @"~/Library/Application Support/RavenApp/appManager/app/"
+#define application_support_path_short @"~/Library/Application Support/RavenApp/appManager/"
+#define application_support_path_icons @"~/Library/Application Support/RavenApp/appManager/icons"
 #endif

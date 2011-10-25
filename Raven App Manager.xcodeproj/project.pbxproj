@@ -34,6 +34,8 @@
 		9F69AB8614273921003AE44B /* rSDK-IconTemplate.psd in Resources */ = {isa = PBXBuildFile; fileRef = 9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */; };
 		9F69ABB11427BF91003AE44B /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69ABAF1427BF91003AE44B /* down.png */; };
 		9F69ABB21427BF91003AE44B /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F69ABB01427BF91003AE44B /* up.png */; };
+		9FB7A89D145169BD009AB771 /* app in Resources */ = {isa = PBXBuildFile; fileRef = 9FB7A89C145169BD009AB771 /* app */; };
+		9FB848191455A56000530138 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848181455A56000530138 /* icons */; };
 		9FC848CE1423F374008AA377 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC848CD1423F374008AA377 /* Cocoa.framework */; };
 		9FC848D81423F374008AA377 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FC848D61423F374008AA377 /* InfoPlist.strings */; };
 		9FC848DA1423F374008AA377 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC848D91423F374008AA377 /* main.m */; };
@@ -83,6 +85,8 @@
 		9F69AB8514273921003AE44B /* rSDK-IconTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rSDK-IconTemplate.psd"; path = "../rSDK-IconTemplate.psd"; sourceTree = "<group>"; };
 		9F69ABAF1427BF91003AE44B /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		9F69ABB01427BF91003AE44B /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		9FB7A89C145169BD009AB771 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
+		9FB848181455A56000530138 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		9FC848C91423F374008AA377 /* rSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC848CD1423F374008AA377 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9FC848D01423F374008AA377 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -194,6 +198,8 @@
 		9FC848D41423F374008AA377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9FB848181455A56000530138 /* icons */,
+				9FB7A89C145169BD009AB771 /* app */,
 				9F62DF54142F2C6700C93563 /* dsa_pub.pem */,
 				9FC848D51423F374008AA377 /* Raven App Manager-Info.plist */,
 				9FC848D61423F374008AA377 /* InfoPlist.strings */,
@@ -283,6 +289,8 @@
 				9F1685421431D62800C112A1 /* export.png in Resources */,
 				9F1685431431D62800C112A1 /* import.png in Resources */,
 				9F1685441431D62800C112A1 /* template.png in Resources */,
+				9FB7A89D145169BD009AB771 /* app in Resources */,
+				9FB848191455A56000530138 /* icons in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

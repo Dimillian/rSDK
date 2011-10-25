@@ -35,11 +35,22 @@
     [templatePath retain]; 
     
     BOOL successPath; 
+    BOOL successAppAPath; 
+    BOOL successiCons;
     successPath = [fileManager fileExistsAtPath:templatePath];
-	if(successPath) return;
-
+    successAppAPath = [fileManager fileExistsAtPath:application_support_path];
+    successiCons = [fileManager fileExistsAtPath:application_support_path_icons];
+	if(successPath && successAppAPath && successiCons) return;
+    
     NSString *pathTemplate = [[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:PSD_NAME]; 
+    NSString *appFolder = [[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:@"app"]; 
+    NSString *iconsFolder = [[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:@"icons"];
+    NSString *destinationPath = [applicationSupport stringByAppendingPathComponent:@"app"];
+    NSString *destinationIconsPath = [applicationSupport stringByAppendingPathComponent:@"icons"];
+
     [fileManager copyItemAtPath:pathTemplate toPath:templatePath error:nil];
+    [fileManager copyItemAtPath:appFolder toPath:destinationPath error:nil];
+    [fileManager copyItemAtPath:iconsFolder toPath:destinationIconsPath error:nil];
     
     fileManager = nil; 
 	[fileManager release];
@@ -92,7 +103,7 @@
 
      return nil;
 }
- 
+
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
     NSString *path = [PLIST_PATH stringByExpandingTildeInPath];
@@ -101,7 +112,12 @@
     NSDictionary *item = [folders objectAtIndex:[tableview selectedRow]];
     NSString *folderName = [item objectForKey:PLIST_KEY_FOLDER];
     [folderNameField setStringValue:[item objectForKey:PLIST_KEY_FOLDER]];
-    [categoryButton selectItemWithTitle:[item objectForKey:PLIST_KEY_CATEGORY]];
+    if ([item objectForKey:PLIST_KEY_CATEGORY] == nil) {
+        [categoryButton selectItemAtIndex:1];
+    }
+    else{
+        [categoryButton selectItemWithTitle:[item objectForKey:PLIST_KEY_CATEGORY]];
+    }
     [officialStateButton selectItemWithTitle:[item objectForKey:PLIST_KEY_OFFICIAL]];
     [appNameField setStringValue:[item objectForKey:PLIST_KEY_APPNAME]];
     if ([item objectForKey:PLIST_KEY_UDID] != nil) {
@@ -173,7 +189,7 @@
                                  atIndex:[tableview numberOfRows] +1 
                                 withUdid:@"com.yourname.appname"
                                withState:[NSNumber numberWithInteger:1] 
-                            withCategory:@"No categorie" 
+                            withCategory:@"No category" 
                        withOfficialState:@"Unofficial"];
     [listManager release]; 
     [tableview selectRowIndexes:[NSIndexSet indexSetWithIndex:[tableview numberOfRows]] byExtendingSelection:NO];
@@ -222,10 +238,10 @@
     }
     else
     {
-    RAPlistManager *listManager = [[RAPlistManager alloc]init];
-    [listManager deleteAppAtIndex:[tableview selectedRow]];
-    [listManager release]; 
-    [tableview reloadData];
+        RAPlistManager *listManager = [[RAPlistManager alloc]init];
+        [listManager deleteAppAtIndex:[tableview selectedRow]];
+        [listManager release]; 
+        [tableview reloadData];
     }
 }
 
@@ -276,6 +292,7 @@
     }
     else
     {
+        [self saveApp:nil];
         RAPlistManager *listManager = [[RAPlistManager alloc]init];
         [listManager exportAppAtIndex:[tableview selectedRow]];
         [listManager release];

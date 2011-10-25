@@ -186,7 +186,7 @@
             [item setObject:[NSNumber numberWithInt:1] forKey:PLIST_KEY_ENABLE];
         }
         if ([item objectForKey:PLIST_KEY_CATEGORY] == nil) {
-            [item setObject:@"No categorie" forKey:PLIST_KEY_CATEGORY];
+            [item setObject:@"No category" forKey:PLIST_KEY_CATEGORY];
         }
         if ([item objectForKey:PLIST_KEY_OFFICIAL] == nil) {
             [item setObject:@"Unofficial" forKey:PLIST_KEY_OFFICIAL];
